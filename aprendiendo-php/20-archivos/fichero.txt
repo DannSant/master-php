@@ -1,0 +1,2 @@
+archivo de texto
+comun y corriente<br> Texto metido desde php<br> Texto metido desde php<br> Texto metido desde php<br> Texto metido desde php<br> Texto metido desde php<br> Texto metido desde php<br> Texto metido desde php
