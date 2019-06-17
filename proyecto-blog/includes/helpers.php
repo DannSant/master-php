@@ -94,15 +94,30 @@ function getEntriesByCategory($conexion,$categoryId){
 function getEntrada($conexion,$id){
     $sql = "SELECT e.*,c.nombre AS 'categoria',u.nombre as 'usuario_nombre' FROM entradas e ". 
         "INNER JOIN categorias c ON e.categoria_id=c.id ". 
-        "INNER JOIN usuarios u ON e.usuario_id = u.id".
+        "INNER JOIN usuarios u ON e.usuario_id = u.id ".
         "WHERE e.id=".$id." ORDER BY e.id DESC LIMIT 1";
    
-    var_dump($sql);
-    die();
+    //echo ($sql);
+    //die();
     $categoria = mysqli_query($conexion,$sql);
     $result = false;
     if($categoria && mysqli_num_rows($categoria)>=1){
         $result =mysqli_fetch_assoc($categoria);
+    }
+    return $result;
+}
+
+function buscarEntradas($conexion,$busqueda){
+    $sql = "SELECT e.*,c.nombre AS 'categoria' FROM entradas e ". 
+        "INNER JOIN categorias c ON e.categoria_id=c.id ".         
+        "WHERE e.titulo like '%$busqueda%'";
+   
+    //echo ($sql);
+    //die();
+    $categoria = mysqli_query($conexion,$sql);
+    $result = false;
+    if($categoria && mysqli_num_rows($categoria)>=1){
+        $result =($categoria);
     }
     return $result;
 }

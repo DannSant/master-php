@@ -28,8 +28,9 @@ require_once 'includes/sidebar.php';
         </p>
 
         <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['id']== $entry['usuario_id']):?>
-            <a href="editar-entrada.php" class="boton boton-verde"> Editar Entrada</a>
-            <a href="borrar-entrada.php" class="boton boton-rojo"> Borrar Entrada</a>
+            <br>
+            <a href="editar-entrada.php?id=<?=$entry['id']?>" class="boton boton-verde"> Editar Entrada</a>
+            <a href="borrar-entrada.php?id=<?=$entry['id']?>" class="boton boton-rojo"> Borrar Entrada</a>
         <?php endif; ?>
 
     </div>
